@@ -20,15 +20,15 @@ public class PutPatchAndDeleteExamples {
         System.out.println(request.toJSONString());
         baseURI = "https://reqres.in/api/users/2";
 
-        given().
-                header("Content-Type", "application/json").
-                contentType(ContentType.JSON).
-                accept(ContentType.JSON).
-                body(request.toJSONString()).
-        when().
-                put(baseURI).
-        then().
-                statusCode(200).log().all();
+        given()
+                .header("Content-Type", "application/json")
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(request.toJSONString()).
+        when()
+                .put(baseURI).
+        then()
+                .statusCode(200).log().all();
 
     }
 
@@ -43,15 +43,15 @@ public class PutPatchAndDeleteExamples {
         System.out.println(request.toJSONString());
         baseURI = "https://reqres.in/api/users/2";
 
-        given().
-                header("Content-Type", "application/json").
-                contentType(ContentType.JSON).
-                accept(ContentType.JSON).
-                body(request.toJSONString()).
-        when().
-                patch(baseURI).
-        then().
-                statusCode(200).log().all();
+        given()
+                .header("Content-Type", "application/json")
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(request.toJSONString()).
+        when()
+                .patch(baseURI).
+        then()
+                .statusCode(200).log().all();
 
     }
 
@@ -60,10 +60,10 @@ public class PutPatchAndDeleteExamples {
 
         baseURI = "https://reqres.in/api/users/2";
 
-        when().
-                delete(baseURI).
-        then().
-                statusCode(204).log().all();
+        when()
+                .delete(baseURI).
+        then()
+                .statusCode(204).log().all();
 
     }
 }

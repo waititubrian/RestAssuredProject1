@@ -18,12 +18,12 @@ public class GetAndPostExamples {
 
         baseURI = "https://reqres.in/api/users?page=2";
 
-        given().
-                get(baseURI).
-                then().
-                statusCode(200).
-                body("data[4].first_name", equalTo("George")).
-                body("data.first_name", hasItems("George", "Rachel"));
+        given()
+                .get(baseURI).
+        then()
+                .statusCode(200)
+                .body("data[4].first_name", equalTo("George"))
+                .body("data.first_name", hasItems("George", "Rachel"));
     }
 
     @Test
@@ -44,15 +44,15 @@ public class GetAndPostExamples {
         System.out.println(request.toJSONString());
         baseURI = "https://reqres.in/api/users";
 
-        given().
-                header("Content-Type", "application/json").
-                contentType(ContentType.JSON).
-                accept(ContentType.JSON).
-                body(request.toJSONString()).
-            when().
-                post(baseURI).
-            then().
-                statusCode(201).log().all();
+        given()
+                .header("Content-Type", "application/json")
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .body(request.toJSONString()).
+        when()
+                .post(baseURI).
+        then()
+                .statusCode(201).log().all();
 
     }
 }
